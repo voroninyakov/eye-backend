@@ -92,4 +92,3 @@ cython_debug/
 .idea/
 .vscode/
 
-__init__.py

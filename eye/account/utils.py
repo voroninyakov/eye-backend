@@ -1,4 +1,3 @@
-from datetime import datetime
 from os.path import splitext
 
 def user_avatar_upload_path(model, filename):

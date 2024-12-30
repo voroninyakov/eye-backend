@@ -2,4 +2,7 @@ from datetime import datetime
 from os.path import splitext
 
 def user_avatar_upload_path(model, filename):
-    return f'{model.username}/{datetime.now().year}/{datetime.now().month}/{datetime.now().day}/{splitext(filename)[1]}'
+    return f'avatars/{model.username}{splitext(filename)[1]}'
+
+def profile_cover_upload_path(model, filename):
+    return f'covers/{model.user.username}{splitext(filename)[1]}'

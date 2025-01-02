@@ -1,0 +1,27 @@
+# upstream for uWSGI
+upstream uwsgi_app {
+    server unix:/code/eye/uwsgi_app.sock;
+}
+server {
+    listen 80;
+    server_name eye.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen               443 ssl;
+    ssl_certificate      /code/eye/ssl/eye.crt;
+    ssl_certificate_key  /code/eye/ssl/eye.key;
+    server_name  eye.com;
+    error_log    stderr warn;
+    access_log   /dev/stdout main;
+
+    location / {
+        include      /etc/nginx/uwsgi_params;
+        uwsgi_pass   uwsgi_app;
+    }
+
+    location /media/ {
+        alias /code/eye/media/;
+    }
+}

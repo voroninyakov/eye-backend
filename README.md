@@ -43,7 +43,7 @@ docker compose up
 
 ## Технологии:
 
-Со списком python-библиотек можно ознакомиться в `requirements.txt`, файл wait-for-it.sh взять из [репозитория vishnubob](https://github.com/vishnubob/wait-for-it)
+Со списком python-библиотек можно ознакомиться в `requirements.txt`, файл wait-for-it.sh взят из [репозитория vishnubob](https://github.com/vishnubob/wait-for-it)
 
 ### Документации:
 
